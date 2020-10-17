@@ -1,0 +1,14 @@
+[Unit]
+Description=Shutdown with LED
+Before=basic.target
+After=local-fs.target sysinit.target
+DefaultDependencies=no
+
+[Service]
+Type=simple
+WorkingDirectory=/tmp
+ExecStart=/usr/local/bin/shutdown-with-led.py
+Restart=on-failure
+
+[Install]
+WantedBy=basic.target
