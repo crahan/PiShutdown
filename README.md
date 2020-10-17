@@ -6,10 +6,6 @@ If you use GPIO 3 (default) to detect the button press you can also use the butt
 
 As the button and LED each have their own GPIO pin you're free to use either a button with an integrated LED (e.g. [button1](https://www.aliexpress.com/item/32960427833.html) or [button2](https://www.aliexpress.com/item/10000308383839.html)) or keep the LED separate.
 
-<video width="800" height="450" controls>
-  <source src="https://raw.githubusercontent.com/crahan/pi-shutdown-button/main/photos/demo.mp4" type="video/mp4">
-</video>
+![gps-plus example](https://raw.githubusercontent.com/crahan/pi-shutdown-button/main/media/inside.jpeg)
 
-![gps-plus example](https://raw.githubusercontent.com/crahan/pi-shutdown-button/main/photos/inside.jpeg)
-
-![gps-plus example](https://raw.githubusercontent.com/crahan/pi-shutdown-button/main/photos/outside.jpeg)
+![gps-plus example](https://raw.githubusercontent.com/crahan/pi-shutdown-button/main/media/outside.jpeg)
