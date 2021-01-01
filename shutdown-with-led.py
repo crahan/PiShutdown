@@ -89,8 +89,8 @@ def main():
     """Start the application."""
     parser = argparse.ArgumentParser()
     # GPIO 3 allows the button to be used to power on the Raspberry Pi
-    parser.add_argument('-b', '--button', type=int, default=3, help='Button GPIO pin, defaults to 3.')
-    parser.add_argument('-l', '--led', type=int, default=13, help='LED GPIO pin, defaults to 13.')
+    parser.add_argument('-b', '--button', type=int, default=3, help='Button GPIO pin, defaults to pin 3.')
+    parser.add_argument('-l', '--led', type=int, default=13, help='LED GPIO pin, defaults to pin 13.')
     parser.add_argument('-d', '--delay', type=int, default=4, help='Shutdown mode delay, defaults to 4 seconds.')
     parser.add_argument('-r', '--reset', type=int, default=2, help='Shutdown mode reset time, defaults to 2 seconds.')
     parser.add_argument('--loglevel', type=str, default='INFO', help='Log level, defaults to INFO.')
