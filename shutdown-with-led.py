@@ -22,7 +22,7 @@ class PiShutdownButton:
             gpio_led,
             btn_hold_time=1,
             reset_time=2,
-            shutdown_mode_time=3):
+            shutdown_mode_time=4):
         """Initialize a PiShutdownButton object."""
         self.btn = Button(gpio_btn, hold_time=btn_hold_time, hold_repeat=True)
         self.btn.when_held = self.btn_hold
@@ -52,7 +52,8 @@ class PiShutdownButton:
         logging.debug('Button is being held.')
         if not self.shutdown_mode:
             pressed_time = int(button.pressed_time)
-            if (pressed_time > self.shutdown_mode_time) and not self.shutdown_mode:
+            # 4 second threshold - 1 second hold delay
+            if (pressed_time > self.shutdown_mode_time - 1) and not self.shutdown_mode:
                 logging.debug("Entering shutdown mode.")
                 self.led.blink(on_time=0.1, off_time=0.1)
                 self.shutdown_mode = True
