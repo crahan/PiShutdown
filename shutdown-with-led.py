@@ -15,13 +15,13 @@ offtime = int(sys.argv[2]) if len(sys.argv) >= 3 else 6
 mintime = 1   # Notice switch after mintime seconds
 ledGPIO = 13  # LED GPIO pin
 
-def shutdown(b):
+def when_held(button):
     # Calculate how long the button has been pressed
-    p = int(b.pressed_time)
+    pressed_time = int(button.pressed_time)
     # Blink rate will increase the longer we hold the button down
     # E.g., at 2 seconds, use a 1/4 second blink rate
     led.blink(on_time=0.5/p, off_time=0.5/p)
-    if p > offtime:
+    if pressed_time > offtime:
         led.off()
         os.system("sudo poweroff")
 
@@ -37,7 +37,7 @@ led = LED(ledGPIO)
 led.on()
 
 btn = Button(offGPIO, hold_time=mintime, hold_repeat=True)
-btn.when_held = shutdown
+btn.when_held = when_held
 btn.when_pressed = when_pressed
 btn.when_released = when_released
 
